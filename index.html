@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Include Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <style>
+    #video-container {
+      display: none;
+    }
+  </style>
+  <script>
+    function showVideo() {
+      var pictureContainer = document.getElementById("picture-container");
+      var videoLink = document.getElementById("video-link");
+      var videoContainer = document.getElementById("video-container");
+      
+      // Get the video URL from the data-src attribute of the video link
+      var videoUrl = videoLink.getAttribute("data-src");
+      
+      // Create the video element
+      var videoElement = document.createElement("video");
+      videoElement.src = videoUrl;
+      videoElement.width = 640;
+      videoElement.height = 360;
+      videoElement.controls = true;
+      
+      // Replace the picture container with the video element
+      pictureContainer.parentNode.replaceChild(videoElement, pictureContainer);
+      
+      // Display the video container
+      videoContainer.style.display = "block";
+      
+      // Listen for the 'ended' event on the video element
+      videoElement.addEventListener("ended", function() {
+        // Create the picture element
+        var pictureElement = document.createElement("img");
+        pictureElement.src = "home2.png";
+        pictureElement.alt = "What We Offe";
+        pictureElement.width = 640;
+        pictureElement.height = 360;
+        
+        // Replace the video element with the picture element
+        videoElement.parentNode.replaceChild(pictureElement, videoElement);
+        
+        // Hide the video container
+        videoContainer.style.display = "none";
+      });
+    }
+  </script>
+  <script>
+    function welcome(){
+      window.location.href="Services.html";
+    }
+  </script>
+  
+</head>
+<body>
+   
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="demo-logo.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#top">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#services">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about-us">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#testimonials">TESTIMONIALS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#footer">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </section>
+      
+    <!-- Banner Section -->
+    <section id="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p> BEST DIGITAL AGENCY</p>
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                    Development, Digital Marketing,WordPress and Graphic Designing.</p>
+                    
+                </div>
+                    
+                </div>
+                <div id="picture-container">
+                    <img src="home2.png" alt="What We Offer" width="640" height="360">
+                    <p><a href="#" id="video-link" data-src="up.mp4" onclick="showVideo();"><img src="play.png" width="20px" height="20px">What We Offer</a></p>
+                  </div>    
+                  <div id="video-container">
+                
+                </div>   
+        </div>
+        <img src="wave1.png" class="bottom-img">
+
+    </section>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container text-center">
+            <h1 class="title">WHAT WE DO?</h1>
+            <div class="row text-center">
+                <div class="col-md-4 services">
+                    <img src="service1.png" class="service-img">
+                    <h4>Growth Marketing</h4>
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                        Development, Digital Marketing,WordPress and Graphic Designing.</p>
+                </div>
+                <div class="col-md-4 services">
+                    <img src="service2.png" class="service-img">
+                    <h4>Online Branding</h4>
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                        Development, Digital Marketing,WordPress and Graphic Designing.</p>
+                </div>
+                <div class="col-md-4 services">
+                    <img src="service3.png" class="service-img">
+                    <h4>Animated Ads</h4>
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                        Development, Digital Marketing,WordPress and Graphic Designing.</p>
+                </div>
+            </div>
+            <button onclick="welcome()" type="button" class="btn btn-primary">All Services</button>
+        </div>
+
+    </section>
+    <!-- About Us -->
+    <section id="about-us">
+        <div class="container">
+            <h1 class="title text-center">WHY CHOOSE US?</h1>
+            <div class="row">
+                <div class="col-md-6 about-us">
+                    <p class="about-title"> Why we're different</p>
+                    <ul>
+                        <li>Believe in doing business with honesty</li>
+                        <li>Understand our client's business goal first</li>
+                        <li>We deliver on time</li>
+                        <li>We create a winning content strategy</li>
+                        <li>We protect your online reputation</li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="network.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h1 class="title text-center">WHAT CLIENT SAY?</h1>
+            <div class="row offset-1">
+                <div class="col-md-5 testimonials">
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                        Development, Digital Marketing,WordPress and Graphic Designing.</p>
+                        <img src="user1.jpg">
+                        <p class="user-details"><b>Agelina</b><br>Co-founder at xyz</p>
+                </div>
+                <div class="col-md-5 testimonials">
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                        Development, Digital Marketing,WordPress and Graphic Designing.</p>
+                        <img src="user2.jpg">
+                        <p class="user-details"><b>John Doe</b><br>Director at xyz</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Social Media Section -->
+    <section id="social-media">
+        <div class="container text-center">
+            <p>FIND US ON SOCIAL MEDIAS</p>
+            <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png"></a>
+            <a href="#"><img src="instagram-icon.png"></a>
+            <a href="#"><img src="twitter-icon.png"></a>
+            <a href="#"><img src="whatsapp-icon.png"></a>
+            <a href="#"><img src="linkedin-icon.png"></a>
+            <a href="#"><img src="snapchat-icon.png"></a>
+            </div>
+        </div>
+
+    </section>
+    <!-- Footer Section -->
+    <section id="footer">
+        <img src="wave2.png" class="footer-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-box">
+                    <img src="demo-logo.png">
+                    <p>Subscribe Easy tutorials YouTube Channel to watch more videos on Website
+                        Development, Digital Marketing,WordPress and Graphic Designing. Press the 
+                        bell icon to get notifications.</p>
+
+                </div>
+                <div class="col-md-4 footer-box">
+                    <p><b>  CONTACT US</b></p>
+                    <p><i class="fa fa-map"></i>World Trade Centre, Bangalore</p>
+                    <p><i class="fa fa-phone"></i>+1 0123456789</p>
+                    <p><i class="far fa-envelope"></i> xyz@gmailcom</p>
+                </div>
+                <div class="col-md-4 footer-box">
+                    <form name="submit-to-google-sheet">
+                        <p><b> SUBSCRIBE NEWSLETTER</b></p>
+                        <input type="email" name="Email" class="form-control" placeholder="Your Email id" required>
+                        <button type="submit" class="btn btn-primary">subscribe</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>    
+            </div>
+            <hr>
+            <p class="copyright">Website Created By -----</p>
+        </div>
+
+      </section>
+
+    <!-- Smooth Scroll -->
+    <script src="smooth-scroll.js"></script>
+    <script>
+        var scholl=new SmoothScroll('a[href*="#"]');
+    </script>
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxOanfuOnoCrhDMT_lsPdoYoca99YsiwcX5sz_QDlT7TN8sx1cxICzS0bDC_bmyyeyA5w/exec"
+        
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                    msg.innerHTML="Thank You For Subscribing!"
+                    setTimeout(function(){
+                        msg.innerHTML=" "
+                    },5000)
+                    form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+ </body>
+</html>
